@@ -1,0 +1,131 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+  background: var(--color-card);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+}
+
+.gridWrapper {
+  display: flex;
+  gap: 0.5rem;
+  align-items: flex-end;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 2px;
+  width: 100%;
+  max-width: 400px;
+  aspect-ratio: 1;
+}
+
+.increaseGrid {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 2px;
+  width: 120px;
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.cell {
+  aspect-ratio: 1;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.base {
+  background-color: var(--color-base);
+  animation: fadeIn 0.2s ease-out;
+}
+
+.discount {
+  background-color: var(--color-discount);
+  animation: pulse 0.5s ease-in-out infinite;
+}
+
+.increase {
+  background-color: var(--color-increase);
+  animation: growIn 0.3s ease-out;
+}
+
+.result {
+  background-color: var(--color-result);
+  animation: highlight 0.5s ease-out;
+}
+
+.empty {
+  background-color: var(--color-muted);
+  opacity: 0.3;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(0.95);
+  }
+}
+
+@keyframes growIn {
+  from {
+    opacity: 0;
+    transform: scale(0);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes highlight {
+  0% {
+    background-color: var(--color-base);
+  }
+  50% {
+    filter: brightness(1.2);
+  }
+  100% {
+    background-color: var(--color-result);
+  }
+}
+
+.labels {
+  display: flex;
+  justify-content: space-between;
+  max-width: 400px;
+}
+
+.label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--color-muted-foreground);
+}

@@ -1,0 +1,242 @@
+.container {
+  background: var(--color-card);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  box-shadow: var(--shadow-md);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.title {
+  font-family: var(--font-sans);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-foreground);
+  margin: 0;
+}
+
+.levelSelector {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.scoreBoard {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  background: var(--color-accent);
+  border-radius: var(--radius);
+  margin-bottom: 1.5rem;
+}
+
+.scoreLabel {
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  color: var(--color-muted-foreground);
+}
+
+.scoreValue {
+  font-family: var(--font-mono);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-foreground);
+}
+
+.scorePercent {
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  color: var(--color-primary);
+}
+
+.questionArea {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.questionText {
+  text-align: center;
+  padding: 1rem;
+  background: var(--color-secondary);
+  border-radius: var(--radius);
+}
+
+.questionLabel {
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  color: var(--color-muted-foreground);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.questionExpression {
+  font-family: var(--font-mono);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.questionSuffix {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  color: var(--color-foreground);
+  margin-left: 0.5rem;
+}
+
+.visualHint {
+  display: flex;
+  justify-content: center;
+  transform: scale(0.8);
+  transform-origin: center;
+}
+
+.hintBox {
+  text-align: center;
+  padding: 0.75rem;
+  background: var(--color-muted);
+  border-radius: var(--radius);
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  color: var(--color-foreground);
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.answerArea {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.answerArea > div {
+  width: 150px;
+}
+
+.unit {
+  font-family: var(--font-sans);
+  font-size: 1.25rem;
+  color: var(--color-foreground);
+  padding-bottom: 0.5rem;
+}
+
+.resultBox {
+  text-align: center;
+  padding: 1rem;
+  border-radius: var(--radius);
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.resultBox.correct {
+  background: var(--color-increase);
+  color: white;
+}
+
+.resultBox.incorrect {
+  background: var(--color-discount);
+  color: white;
+}
+
+.resultMessage {
+  font-family: var(--font-sans);
+  font-size: 1.5rem;
+  font-weight: 700;
+  display: block;
+}
+
+.correctAnswer {
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  display: block;
+  margin-top: 0.5rem;
+}
+
+.actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.actions button {
+  min-width: 140px;
+}
+
+.levelGuide {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.guideTitle {
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-muted-foreground);
+  margin-bottom: 0.75rem;
+}
+
+.guideList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.guideItem {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: var(--radius);
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  color: var(--color-muted-foreground);
+  transition: all 0.2s ease;
+}
+
+.guideItem.active {
+  background: var(--color-accent);
+  color: var(--color-foreground);
+}
+
+.guideLevelBadge {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.25rem 0.5rem;
+  background: var(--color-secondary);
+  border-radius: var(--radius-sm);
+}
+
+.guideItem.active .guideLevelBadge {
+  background: var(--color-primary);
+  color: var(--color-primary-foreground);
+}
